@@ -1,0 +1,55 @@
+/* GARAPON / LIGHT 디자인 토큰 — DESIGN-SYSTEM.md 와 Figma 변수(Primitives / Semantic / Dimension)와 같은 이름 */
+:root {
+  /* Primitives */
+  --gp-ink: #312F28;
+  --gp-paper: #E8E4DA;
+  --gp-white: #FFFFFF;
+  --gp-steel: #7A8085;
+  --gp-yellow: #FFC833;
+  --gp-yellow-deep: #F7B529;
+  --gp-orange: #EF5023;
+  --gp-orange-deep: #C93E15;
+  --gp-night: #1A1A1A;
+  --gp-line: #B1AFA8;
+
+  /* Semantic */
+  --band-hero: var(--gp-steel);
+  --band-main: var(--gp-yellow);
+  --band-light: var(--gp-paper);
+  --band-dark: var(--gp-night);
+  --text-primary: var(--gp-ink);
+  --text-on-dark: var(--gp-white);
+  --text-muted: var(--gp-steel);
+  --text-link: var(--gp-orange);
+  --btn-primary-bg: var(--gp-orange);
+  --btn-primary-bg-pressed: var(--gp-orange-deep);
+  --btn-primary-fg: var(--gp-white);
+  --btn-secondary-bg: var(--gp-ink);
+  --btn-secondary-fg: var(--gp-white);
+  --btn-utility-fg: var(--gp-ink);
+  --field-bg: var(--gp-paper);
+  --field-border: var(--gp-line);
+  --field-border-focus: var(--gp-orange);
+  --field-border-error: var(--gp-orange-deep);
+  --card-bg: var(--gp-paper);
+  --sticker-bg: var(--gp-night);
+  --sticker-fg: var(--gp-white);
+  --sticker-accent: var(--gp-yellow);
+  --focus-ring: var(--gp-orange);
+  --divider: var(--gp-line);
+
+  /* Dimension */
+  --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-24: 24px;
+  --space-32: 32px; --space-48: 48px; --space-64: 64px; --space-96: 96px;
+  --r-sticker: 6px; --r-field: 12px; --r-card: 16px; --r-pill: 999px;
+  --shadow-hard: 0 6px 0 rgba(0, 0, 0, .18);
+
+  /* Type */
+  --font: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+
+  /* Motion */
+  --ease-turn: cubic-bezier(.2, .8, .2, 1);
+  --dur-snap: 120ms;
+  --dur-turn: 240ms;
+  --dur-wobble: 600ms;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>가라폰. GARAPON / LIGHT</title>
+  <meta name="description" content="손으로 돌려 빛의 밝기를 조절하는 탁상 조명, 가라폰.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="nav__logo" href="#top">가라폰</a>
+    <nav class="nav__links" aria-label="주요 메뉴">
+      <a href="#crank">손잡이</a>
+      <a href="#try">돌려 보기</a>
+      <a href="#parts">구조</a>
+      <a href="#specs">스펙</a>
+      <a class="btn btn--primary btn--sm" href="#news">소식 받기</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 히어로: band/hero -->
+    <section class="band band--hero">
+      <div class="wrap hero">
+        <div class="hero__copy">
+          <p class="hero__kicker">GARAPON / LIGHT</p>
+          <h1 class="display">가라폰.</h1>
+          <p class="lead">손으로 돌려 빛의 밝기를 조절하는 탁상 조명. 돌리면 밝아지고, 멈추면 그 밝기를 기억해요.</p>
+          <div class="row">
+            <a class="btn btn--primary" href="#try"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4h-4"/></svg>돌려 보기</a>
+            <a class="btn btn--utility btn--on-dark" href="#crank">어떻게 동작해요?</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img src="assets/01_대표컷_점등.jpg" width="1600" height="1200" alt="노란 반투명 원통 몸통과 흰 A자 프레임, 금색 손잡이가 달린 가라폰 램프가 켜져 있다">
+          <span class="sticker sticker--hero" aria-hidden="true"><b>4.5</b>바퀴로<br>끝까지</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이야기 1: band/main -->
+    <section class="band band--main" id="crank">
+      <div class="wrap split">
+        <div>
+          <h2 class="h1">돌리면, 밝아진다.</h2>
+          <p class="lead">가라폰은 뽑기 기계의 둥근 통과 손잡이에서 출발했어요.</p>
+          <p class="body">몸통 안의 MPU6050이 회전 방향과 양을 읽고, 아두이노 우노가 그 값을 밝기로 바꿔 LED 스트립 두 줄을 켭니다. 꺼짐 끝부터 최대 밝기까지 약 4.5바퀴. 어두운 쪽에 회전을 더 길게 배분해서 은은한 밝기도 손끝으로 고를 수 있어요.</p>
+        </div>
+        <figure class="photo-card">
+          <img src="assets/03_회전축_디테일.jpg" width="1600" height="1200" loading="lazy" alt="흰 크랭크 팔과 금색 공 손잡이가 축받침에 끼워진 모습">
+          <figcaption>손잡이의 회전이 그대로 몸통의 회전이 됩니다.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 손으로 해보기: band/light -->
+    <section class="band band--light" id="try">
+      <div class="wrap">
+        <h2 class="h1">직접, 돌려 보세요.</h2>
+        <p class="lead measure">다이얼을 잡고 돌리거나 마우스 휠을 굴려 보세요. 램프가 있으면 센서를 연결해서 진짜 손잡이로 돌릴 수도 있어요.</p>
+        <div class="try">
+          <div class="lamp" id="lamp" style="--glow: 0.3">
+            <img src="assets/05_책상배치_점등.jpg" width="1600" height="1200" loading="lazy" alt="책상 위에 놓인 가라폰 램프">
+            <span class="lamp__glow" aria-hidden="true"></span>
+          </div>
+          <div class="dial-box">
+            <div class="dial" id="dial" role="slider" tabindex="0" aria-label="밝기" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30">
+              <svg viewBox="0 0 240 240" aria-hidden="true">
+                <circle class="dial__track" cx="120" cy="120" r="100"/>
+                <circle class="dial__fill" id="dial-fill" cx="120" cy="120" r="100" pathLength="100"/>
+                <g id="dial-ticks"></g>
+                <g id="dial-knob"><circle class="dial__ball" cx="120" cy="20" r="15"/></g>
+              </svg>
+              <div class="dial__value"><span id="dial-pct">30</span><small>%</small></div>
+            </div>
+            <p class="dial__turns" id="dial-turns">1.4 / 4.5 바퀴</p>
+            <div class="row row--center">
+              <button class="btn btn--secondary" id="serial-btn" type="button"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7V3M15 7V3M6 7h12v5a6 6 0 0 1-12 0z"/><path d="M12 18v3"/></svg>센서 연결</button>
+            </div>
+            <p class="small muted" id="serial-state" aria-live="polite">센서 없이 화면에서만 돌리는 중</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 이야기 2: band/main -->
+    <section class="band band--main" id="parts">
+      <div class="wrap">
+        <h2 class="h1">속이, 보인다.</h2>
+        <p class="lead measure">숨기지 않은 구조가 가라폰의 얼굴이에요.</p>
+        <div class="cards">
+          <article class="card">
+            <span class="sticker sticker--card" aria-hidden="true"><b>NEW</b></span>
+            <img src="assets/02_조작컷_점등.jpg" width="1600" height="1200" loading="lazy" alt="손으로 손잡이를 돌리는 모습">
+            <p class="small muted">01</p>
+            <h3 class="h2">돌리면, 밝아진다.</h3>
+            <p class="body">한쪽으로 돌리면 밝아지고, 반대로 돌리면 어두워져요.</p>
+            <a class="btn btn--utility" href="#try">돌려 보기</a>
+          </article>
+          <article class="card">
+            <img src="assets/04_하부체결_디테일.jpg" width="1600" height="1200" loading="lazy" alt="하부 프로파일과 코너 커넥터 체결부">
+            <p class="small muted">02</p>
+            <h3 class="h2">핀과 키로, 버틴다.</h3>
+            <p class="body">3D 프린팅 프로파일을 직접 설계한 핀·키 체결로 잡았어요.</p>
+            <a class="btn btn--utility" href="#specs">스펙 보기</a>
+          </article>
+          <article class="card">
+            <img src="assets/06_후면.jpg" width="1600" height="1200" loading="lazy" alt="가라폰 램프 뒷면 구조">
+            <p class="small muted">03</p>
+            <h3 class="h2">멈추면, 기억한다.</h3>
+            <p class="body">손을 떼면 마지막 밝기를 그대로 유지해요.</p>
+            <a class="btn btn--utility" href="#news">소식 받기</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 스펙: band/dark -->
+    <section class="band band--dark" id="specs">
+      <div class="wrap">
+        <h2 class="h1">스펙.</h2>
+        <dl class="specs">
+          <div><dt>크기</dt><dd>170 × 170 × 180 mm 이내</dd></div>
+          <div><dt>몸통</dt><dd>Ø170 노란 반투명 원통</dd></div>
+          <div><dt>조절</dt><dd>꺼짐 ~ 최대, 약 4.5바퀴</dd></div>
+          <div><dt>센서</dt><dd>MPU6050 회전 감지</dd></div>
+          <div><dt>제어</dt><dd>Arduino UNO + MOSFET</dd></div>
+          <div><dt>빛</dt><dd>백색 LED 스트립 2줄</dd></div>
+          <div><dt>프레임</dt><dd>3D 프린팅 A자 프레임</dd></div>
+          <div><dt>정지 시</dt><dd>마지막 밝기 유지</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 소식: band/light -->
+    <section class="band band--light" id="news">
+      <div class="wrap news">
+        <div>
+          <h2 class="h1">소식, 받기.</h2>
+          <p class="lead">다음 버전이 나오면 알려 드릴게요.</p>
+        </div>
+        <form class="form" id="news-form" novalidate>
+          <label class="field">
+            <span class="field__label">이메일</span>
+            <input class="field__box" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <span class="field__help">소식은 한 달에 한 번만 보내요.</span>
+          </label>
+          <label class="field">
+            <span class="field__label">남기고 싶은 말</span>
+            <textarea class="field__box field__box--area" name="msg" placeholder="램프를 써 본 느낌을 적어 주세요."></textarea>
+            <span class="field__help">선택 사항이에요.</span>
+          </label>
+          <button class="btn btn--primary" type="submit">소식 받기</button>
+          <p class="small" id="form-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="band band--dark footer">
+    <div class="wrap footer__in">
+      <p class="h2">가라폰.</p>
+      <p class="small">디자인프로토타이핑 2026 · 디자인시스템 레퍼런스 play.date</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
