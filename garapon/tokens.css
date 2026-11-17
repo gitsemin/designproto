@@ -1,55 +1,49 @@
-/* GARAPON / LIGHT 디자인 토큰 — DESIGN-SYSTEM.md 와 Figma 변수(Primitives / Semantic / Dimension)와 같은 이름 */
+/* GARAPONᴸ 디자인 토큰 v2 — DESIGN-SYSTEM.md, Figma 변수(Primitives / Semantic / Dimension)와 같은 이름 */
 :root {
   /* Primitives */
-  --gp-ink: #312F28;
-  --gp-paper: #E8E4DA;
-  --gp-white: #FFFFFF;
-  --gp-steel: #7A8085;
-  --gp-yellow: #FFC833;
-  --gp-yellow-deep: #F7B529;
-  --gp-orange: #EF5023;
-  --gp-orange-deep: #C93E15;
-  --gp-night: #1A1A1A;
-  --gp-line: #B1AFA8;
+  --ag-studio: #E5E7E6;
+  --ag-white: #FFFFFF;
+  --ag-black: #000000;
+  --ag-ink: #1B1B1B;
+  --ag-grey-700: #3A3A3A;
+  --ag-grey-600: #606060;
+  --ag-grey-400: #9E9E9E;
+  --ag-yellow: #F4CD01;
 
   /* Semantic */
-  --band-hero: var(--gp-steel);
-  --band-main: var(--gp-yellow);
-  --band-light: var(--gp-paper);
-  --band-dark: var(--gp-night);
-  --text-primary: var(--gp-ink);
-  --text-on-dark: var(--gp-white);
-  --text-muted: var(--gp-steel);
-  --text-link: var(--gp-orange);
-  --btn-primary-bg: var(--gp-orange);
-  --btn-primary-bg-pressed: var(--gp-orange-deep);
-  --btn-primary-fg: var(--gp-white);
-  --btn-secondary-bg: var(--gp-ink);
-  --btn-secondary-fg: var(--gp-white);
-  --btn-utility-fg: var(--gp-ink);
-  --field-bg: var(--gp-paper);
-  --field-border: var(--gp-line);
-  --field-border-focus: var(--gp-orange);
-  --field-border-error: var(--gp-orange-deep);
-  --card-bg: var(--gp-paper);
-  --sticker-bg: var(--gp-night);
-  --sticker-fg: var(--gp-white);
-  --sticker-accent: var(--gp-yellow);
-  --focus-ring: var(--gp-orange);
-  --divider: var(--gp-line);
+  --surface-studio: var(--ag-studio);
+  --surface-dark: var(--ag-black);
+  --surface-raised: var(--ag-ink);
+  --text-strong: var(--ag-black);
+  --text-soft: var(--ag-grey-600);
+  --text-strong-inverse: var(--ag-white);
+  --text-soft-inverse: var(--ag-grey-400);
+  --btn-primary-bg: var(--ag-black);
+  --btn-primary-fg: var(--ag-white);
+  --btn-primary-inverse-bg: var(--ag-white);
+  --btn-primary-inverse-fg: var(--ag-black);
+  --btn-hover-bg: var(--ag-yellow);
+  --field-line: var(--ag-grey-600);
+  --field-line-focus: var(--ag-yellow);
+  --card-feature-bg: var(--ag-white);
+  --card-quote-bg: var(--ag-ink);
+  --card-quote-border: var(--ag-grey-700);
+  --ticker-bg: var(--ag-black);
+  --banner-bg: var(--ag-yellow);
+  --accent: var(--ag-yellow);
+  --focus-ring: var(--ag-yellow);
 
   /* Dimension */
   --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-24: 24px;
-  --space-32: 32px; --space-48: 48px; --space-64: 64px; --space-96: 96px;
-  --r-sticker: 6px; --r-field: 12px; --r-card: 16px; --r-pill: 999px;
-  --shadow-hard: 0 6px 0 rgba(0, 0, 0, .18);
+  --space-32: 32px; --space-48: 48px; --space-64: 64px; --space-96: 96px; --space-160: 160px;
+  --r-pill: 999px; --r-card: 10px; --r-photo: 16px;
 
   /* Type */
   --font: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif;
 
   /* Motion */
-  --ease-turn: cubic-bezier(.2, .8, .2, 1);
-  --dur-snap: 120ms;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur-fade: 600ms;
   --dur-turn: 240ms;
-  --dur-wobble: 600ms;
+  --dur-ticker: 30s;
 }
